@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 15, 2020 at 01:41 PM
+-- Generation Time: Mar 15, 2020 at 03:01 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -66,13 +66,20 @@ DROP TABLE IF EXISTS `car_rent`;
 CREATE TABLE IF NOT EXISTS `car_rent` (
   `orderNo` int(10) NOT NULL AUTO_INCREMENT,
   `orderDate` datetime NOT NULL DEFAULT current_timestamp(),
-  `orderName` int(100) NOT NULL,
+  `orderName` varchar(100) NOT NULL,
   `carRegNo` int(10) NOT NULL,
   `userID` int(10) NOT NULL,
   PRIMARY KEY (`orderNo`),
   KEY `userConst` (`userID`),
   KEY `carRegConst` (`carRegNo`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `car_rent`
+--
+
+INSERT INTO `car_rent` (`orderNo`, `orderDate`, `orderName`, `carRegNo`, `userID`) VALUES
+(1, '2020-03-15 20:28:52', 'Ferrari 488 Spider', 2, 1);
 
 -- --------------------------------------------------------
 
